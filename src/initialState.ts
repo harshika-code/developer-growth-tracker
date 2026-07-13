@@ -222,8 +222,8 @@ export const DEFAULT_PROJECTS: Project[] = [
     name: 'Developer Portfolio',
     description: 'A responsive personal portfolio built using React and Tailwind CSS highlighting my roadmap and achievements.',
     techStack: 'React, Tailwind CSS, Lucide Icons, Motion',
-    githubLink: 'https://github.com/harshika/portfolio',
-    demoLink: 'https://harshika-portfolio.vercel.app',
+    githubLink: 'https://github.com/octocat/portfolio',
+    demoLink: 'https://developer-portfolio-demo.vercel.app',
     status: 'Building',
     isFavourite: true
   },
@@ -574,7 +574,7 @@ export const DEFAULT_STATE: TrackerState = {
   ]
 };
 
-const STORAGE_KEY = 'harshika_growth_tracker_state';
+const STORAGE_KEY = 'dev_growth_tracker_state';
 
 export function loadTrackerState(): TrackerState {
   try {

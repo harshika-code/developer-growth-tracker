@@ -62,7 +62,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   // Custom Gemini API Key state
   const [apiKeyInput, setApiKeyInput] = useState(() => {
     try {
-      return localStorage.getItem('harshika_growth_tracker_gemini_api_key') || '';
+      return localStorage.getItem('dev_growth_tracker_gemini_api_key') || '';
     } catch {
       return '';
     }
@@ -123,7 +123,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(fullState, null, 2));
       const downloadAnchor = document.createElement('a');
       downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", `harshika_growth_tracker_backup_${new Date().toISOString().split('T')[0]}.json`);
+      downloadAnchor.setAttribute("download", `developer_growth_tracker_backup_${new Date().toISOString().split('T')[0]}.json`);
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
@@ -157,9 +157,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   };
 
   const handleReset = () => {
-    if (window.confirm('CRITICAL: This will revert ALL customized tasks, skills, Apna College roadmaps, and custom bookmarks back to their default starter values. This cannot be undone. Proceed?')) {
+    if (window.confirm('Are you sure you want to delete and reset all your tracker data? This action will permanently restore default empty starter values and wipe any custom progress entries. This cannot be undone. Proceed?')) {
       onResetWorkspace();
-      alert('Workspace reset back to default starter curriculum.');
+      alert('All tracker data has been successfully reset.');
     }
   };
 
@@ -354,7 +354,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           <div className="flex gap-2">
             <button
               onClick={() => {
-                localStorage.setItem('harshika_growth_tracker_gemini_api_key', apiKeyInput.trim());
+                localStorage.setItem('dev_growth_tracker_gemini_api_key', apiKeyInput.trim());
                 alert('Gemini API Key saved successfully! The AI tools will now use this key.');
               }}
               className="px-4 py-2 text-xs font-semibold rounded-lg bg-neutral-900 text-white dark:bg-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-sm shrink-0 cursor-pointer"
@@ -364,7 +364,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             {apiKeyInput && (
               <button
                 onClick={() => {
-                  localStorage.removeItem('harshika_growth_tracker_gemini_api_key');
+                  localStorage.removeItem('dev_growth_tracker_gemini_api_key');
                   setApiKeyInput('');
                   alert('Custom Gemini API Key removed.');
                 }}
@@ -385,7 +385,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
         <div className="space-y-1">
           <h3 className="font-display font-semibold text-sm flex items-center gap-2">
             <FileJson size={15} />
-            <span>Milestone Backup & JSON Restore</span>
+            <span>Data Backup & Recovery</span>
           </h3>
           <p className="text-xs text-neutral-400 dark:text-neutral-500">
             Export all custom tasks, skills progress, logged learning hours, and bookmarks as a single backup file, or restore.
@@ -404,8 +404,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           >
             <Download size={14} />
             <div className="text-left">
-              <span className="block font-bold">Export Growth Dataset</span>
-              <span className="block text-[10px] text-neutral-400 font-normal">Download .json backup to your computer</span>
+              <span className="block font-bold">Export Data</span>
+              <span className="block text-[10px] text-neutral-400 font-normal">Download complete tracker data as JSON file</span>
             </div>
           </button>
 
@@ -419,8 +419,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           >
             <Upload size={14} />
             <div className="text-left">
-              <span className="block font-bold">Import Backup File</span>
-              <span className="block text-[10px] text-neutral-400 font-normal">Restore growth variables from file</span>
+              <span className="block font-bold">Import Data</span>
+              <span className="block text-[10px] text-neutral-400 font-normal">Upload previous backup and restore everything</span>
             </div>
             <input
               type="file"
@@ -456,7 +456,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
             className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold text-white bg-red-600 hover:bg-red-700 transition-colors cursor-pointer shadow"
           >
             <RotateCcw size={14} />
-            <span>Hard Reset Workspace Dataset</span>
+            <span>Reset Data</span>
           </button>
         </div>
       </div>

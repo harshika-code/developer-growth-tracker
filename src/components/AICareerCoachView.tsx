@@ -15,7 +15,7 @@ export const AICareerCoachView: React.FC<AICareerCoachViewProps> = ({
   const [loading, setLoading] = useState(false);
   const [advice, setAdvice] = useState<string>(() => {
     try {
-      return localStorage.getItem('harshika_growth_tracker_ai_advice') || '';
+      return localStorage.getItem('dev_growth_tracker_ai_advice') || '';
     } catch {
       return '';
     }
@@ -25,7 +25,7 @@ export const AICareerCoachView: React.FC<AICareerCoachViewProps> = ({
   // Persist advice locally once generated
   useEffect(() => {
     try {
-      localStorage.setItem('harshika_growth_tracker_ai_advice', advice);
+      localStorage.setItem('dev_growth_tracker_ai_advice', advice);
     } catch (e) {
       console.error(e);
     }
@@ -36,7 +36,7 @@ export const AICareerCoachView: React.FC<AICareerCoachViewProps> = ({
     setLoading(true);
     setError('');
     try {
-      const customKey = localStorage.getItem('harshika_growth_tracker_gemini_api_key') || '';
+      const customKey = localStorage.getItem('dev_growth_tracker_gemini_api_key') || '';
       const response = await fetch('/api/ai-coach', {
         method: 'POST',
         headers: {

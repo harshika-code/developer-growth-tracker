@@ -36,10 +36,10 @@ export const IntegrationsView: React.FC<IntegrationsViewProps> = ({
   darkMode
 }) => {
   // Local edit states
-  const [ghUser, setGhUser] = useState(github?.username || 'harshika-dev');
-  const [ghRepo, setGhRepo] = useState(github?.repo || 'harshika-growth-tracker');
+  const [ghUser, setGhUser] = useState(github?.username || 'octocat');
+  const [ghRepo, setGhRepo] = useState(github?.repo || 'developer-growth-tracker');
   const [ghToken, setGhToken] = useState(github?.token || '');
-  const [lcUser, setLcUser] = useState(leetcode?.username || 'harshika_codes');
+  const [lcUser, setLcUser] = useState(leetcode?.username || 'dev_coder');
   const [lcSolved, setLcSolved] = useState(leetcode?.solvedCount || 154);
   const [lcEasy, setLcEasy] = useState(leetcode?.easyCount || 82);
   const [lcMedium, setLcMedium] = useState(leetcode?.mediumCount || 61);
@@ -703,7 +703,7 @@ export const IntegrationsView: React.FC<IntegrationsViewProps> = ({
                   <input
                     type="text"
                     required
-                    placeholder="e.g. harshika_dev"
+                    placeholder="e.g. dev_coder"
                     value={platUser}
                     onChange={(e) => setPlatUser(e.target.value)}
                     className={`w-full px-3 py-2 rounded-lg text-sm border outline-none transition-all ${

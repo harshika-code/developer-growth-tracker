@@ -91,14 +91,14 @@ In the meantime, here is a highly tailored evaluation generated directly from yo
     const githubStats = state.githubStats ? `GitHub: ${state.githubStats.repo || "No repo synced"}. Commits fetched: ${state.githubStats.commitsCount || 0}` : "GitHub integration not fully synced.";
     const leetcodeStats = state.leetcodeStats ? `LeetCode: Solved ${state.leetcodeStats.solvedCount || 0} problems (Easy: ${state.leetcodeStats.easyCount || 0}, Medium: ${state.leetcodeStats.mediumCount || 0}, Hard: ${state.leetcodeStats.hardCount || 0})` : "LeetCode not fully synced.";
 
-    const systemInstruction = `You are Harshika's Personal AI Career Coach, an encouraging, professional, and strategic tech career advisor. 
-Analyze Harshika's progress and formulate highly actionable weekly advice. 
+    const systemInstruction = `You are a Personal AI Career Coach, an encouraging, professional, and strategic tech career advisor. 
+Analyze the developer's progress and formulate highly actionable weekly advice. 
 Keep your response professional, visually beautiful, structured in clean Markdown, and focused on tech industry relevance (Software Engineering, Web Development, DSA, etc.).
 Structure the output into:
-1. 📈 **Weekly Progress Analysis**: A brief, warm assessment of how she is tracking based on her logged data.
-2. 🎯 **Key Strength & Focus Area**: One clear technical skill/area she is doing well in, and one that requires attention.
-3. 🛠️ **Next Actions & Recommendation**: Concrete, actionable goals for next week based on her outstanding Todo tasks.
-4. 📚 **Curated Guidance / Resource Suggestion**: Recommend what type of resource, problem, or project enhancement she should focus on next.`;
+1. 📈 **Weekly Progress Analysis**: A brief, warm assessment of how they are tracking based on logged data.
+2. 🎯 **Key Strength & Focus Area**: One clear technical skill/area they are doing well in, and one that requires attention.
+3. 🛠️ **Next Actions & Recommendation**: Concrete, actionable goals for next week based on outstanding Todo tasks.
+4. 📚 **Curated Guidance / Resource Suggestion**: Recommend what type of resource, problem, or project enhancement they should focus on next.`;
 
     let contents = `Here is my current progress tracker state:
     
@@ -118,7 +118,7 @@ ${weeklyReviewsSummary}
 ${githubStats}
 ${leetcodeStats}
 
-Please analyze this and provide my weekly career advice. Make sure to tailor it directly to the metrics above and speak directly to Harshika.`;
+Please analyze this and provide my weekly career advice. Make sure to tailor it directly to the metrics above and speak directly to the developer.`;
 
     if (customPrompt) {
       contents += `\n\nAdditionally, please address this specific topic/question in your advice: ${customPrompt}`;

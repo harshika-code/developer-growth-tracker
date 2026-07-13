@@ -39,7 +39,7 @@ export default function App() {
   const [currentView, setView] = useState<string>('dashboard');
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     try {
-      const savedTheme = localStorage.getItem('harshika_growth_tracker_theme');
+      const savedTheme = localStorage.getItem('dev_growth_tracker_theme');
       return savedTheme ? savedTheme === 'dark' : true; // Default to dark mode for modern feel
     } catch {
       return true;
@@ -61,7 +61,7 @@ export default function App() {
   // Synchronize theme configuration
   useEffect(() => {
     try {
-      localStorage.setItem('harshika_growth_tracker_theme', darkMode ? 'dark' : 'light');
+      localStorage.setItem('dev_growth_tracker_theme', darkMode ? 'dark' : 'light');
       if (darkMode) {
         document.documentElement.classList.add('dark');
       } else {

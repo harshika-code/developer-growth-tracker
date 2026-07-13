@@ -54,7 +54,7 @@ export const ResumeBuilderView: React.FC<ResumeBuilderViewProps> = ({
     setLoading(true);
     setError('');
     try {
-      const customKey = localStorage.getItem('harshika_growth_tracker_gemini_api_key') || '';
+      const customKey = localStorage.getItem('dev_growth_tracker_gemini_api_key') || '';
       const response = await fetch('/api/ai-resume', {
         method: 'POST',
         headers: {
