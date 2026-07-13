@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Harshika Growth Tracker",
+  "description": "A powerful personal career tracking workspace for managing tasks, skills, Apna College curriculum, projects, and resources.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
